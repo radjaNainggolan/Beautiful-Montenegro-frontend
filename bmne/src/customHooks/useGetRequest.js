@@ -15,10 +15,10 @@ const useGetRequest = (url) => {
             if(respones.status !== 200){
                 throw Error("Could not fetch data from resource!");
             }
-            setData(respones);
-            //console.log(data);
+            setData(respones.data);
             setLoading(false);
             setError(null);
+            console.log(data);
         })
         .catch(error => {
             if(error.name !== 'AbortError'){
