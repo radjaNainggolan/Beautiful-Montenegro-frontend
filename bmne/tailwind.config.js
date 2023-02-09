@@ -6,8 +6,13 @@ module.exports = {
       fontFamily:{
         graduate:['Graduate'],
         montserrat:['Montserrat'],
+      },
+      height:{
+        'good':'78rem'
       }
     },
   },
-  plugins: [],
+  plugins: [
+    require('tailwind-scrollbar')({ nocompatible: true })
+  ],
 }
