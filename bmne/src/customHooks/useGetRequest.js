@@ -16,9 +16,9 @@ const useGetRequest = (url) => {
                 throw Error("Could not fetch data from resource!");
             }
             setData(respones.data);
+            console.log(data);
             setLoading(false);
             setError(null);
-            console.log(data);
         })
         .catch(error => {
             if(error.name !== 'AbortError'){
