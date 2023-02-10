@@ -6,19 +6,22 @@ const useGetRequest = (url) => {
     const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
-
+    
     useEffect(() => {
         const abortController = new AbortController();
 
-        axios.get(url,{signal:abortController.signal})
-        .then(respones => {
-            if(respones.status !== 200){
+        axios.get(url)
+        .then(res => {
+            if(res.status !== 200){
                 throw Error("Could not fetch data from resource!");
             }
-            setData(respones.data);
-            console.log(data);
-            setLoading(false);
+            
+            setData(res.data);
+            
             setError(null);
+            setLoading(false);
+            console.log(res.data);
+           
         })
         .catch(error => {
             if(error.name !== 'AbortError'){
@@ -32,6 +35,7 @@ const useGetRequest = (url) => {
 
     },[url]);
 
+    
     return {data, loading, error}
 }
  
