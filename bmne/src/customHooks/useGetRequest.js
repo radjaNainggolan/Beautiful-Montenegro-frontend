@@ -1,9 +1,10 @@
 import axios from "axios";
-import { useState, useEffect } from "react";
-
+import { useState, useEffect, useContext } from "react";
+import { AppContext } from "../context/AppContext";
 const useGetRequest = (url) => {
    
-    const [data, setData] = useState(null);
+    const context = useContext(AppContext);
+    const {data, setData} = context;
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     
@@ -12,15 +13,15 @@ const useGetRequest = (url) => {
 
         axios.get(url)
         .then(res => {
+            
             if(res.status !== 200){
                 throw Error("Could not fetch data from resource!");
             }
             
             setData(res.data);
-            
             setError(null);
             setLoading(false);
-            console.log(res.data);
+            //console.log(res.data);
            
         })
         .catch(error => {
@@ -36,7 +37,7 @@ const useGetRequest = (url) => {
     },[url]);
 
     
-    return {data, loading, error}
+    return {loading, error}
 }
  
 export default useGetRequest;

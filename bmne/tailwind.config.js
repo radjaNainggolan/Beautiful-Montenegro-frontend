@@ -9,7 +9,7 @@ module.exports = {
       },
       height:{
         'good':'78rem',
-        'card':'52rem',
+        'card':'60rem',
         'sc':'94vh'
       }
     },

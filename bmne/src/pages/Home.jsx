@@ -1,15 +1,16 @@
-import {MapContainer, TileLayer, useMap, Marker, Popup, Polygon} from 'react-leaflet';
+import {MapContainer, TileLayer, useMap, Marker, Popup, Tooltip} from 'react-leaflet';
 import useGetRequest from '../customHooks/useGetRequest';
 import CardList from '../components/CardList';
+import { AppContext } from '../context/AppContext';
+import { useContext} from 'react';
 
 //42.7044223 19.3957785
 const Home = () => {
     
-    const {data, loading, error} = useGetRequest("http://localhost:8080/locations/all");    
+    const context = useContext(AppContext);
+    const {loading, error} = useGetRequest("http://localhost:8080/locations/all");    
+    const  {data} = context;
 
-    // if(!loading){
-    //     console.log(data[0].geometry.coordinates);
-    // }
 
     return (
         <div className="w-screen h-sc flex flex-row justify-evenly align-middle py-6 bg-opacity-20 relative z-0">
@@ -21,13 +22,13 @@ const Home = () => {
                 />
 
                 {data.map(geom => (
-                    <Marker key={geom.id} position={geom.geometry.coordinates}></Marker>
+                    <Marker  key={geom.id} position={geom.geometry.coordinates}><Tooltip>{geom.name}</Tooltip></Marker>
+                    
                 ))}    
 
             </MapContainer>
             }
-            
-            {data && <CardList data={data}></CardList>}
+            {data && <CardList data={data} ></CardList>}
 
         </div>
     );

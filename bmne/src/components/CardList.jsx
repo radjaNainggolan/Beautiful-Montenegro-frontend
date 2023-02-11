@@ -1,8 +1,16 @@
+
 const CardList = ({data}) => {
+    
+    const onClick = (id) => {
+        
+    }
+
+
     return (
         <div className="font-montserrat text-lg font-normal flex flex-col justify-between w-1/4 h-full overflow-scroll scrollbar scrollbar-thumb-slate-700 scrollbar-thin">
             {data.map( (geom) => (
-                <div key={geom.id} className="flex flex-col items-center justify-evenly h-card content-center text-center cursor-pointer">
+                <div key={geom.id}  
+                className={`flex flex-col items-center justify-evenly h-card content-center text-center cursor-pointer  `}>
                     <img 
                     src={geom.images[0].url} 
                     alt={geom.images[0].url}
