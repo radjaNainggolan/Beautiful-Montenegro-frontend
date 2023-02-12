@@ -2,15 +2,17 @@ import {MapContainer, TileLayer, useMap, Marker, Popup, Tooltip} from 'react-lea
 import useGetRequest from '../customHooks/useGetRequest';
 import CardList from '../components/CardList';
 import { AppContext } from '../context/AppContext';
-import { useContext} from 'react';
+import { useContext, useEffect} from 'react';
+import DynamicMarker from '../components/DynamicMarker';
 
 //42.7044223 19.3957785
 const Home = () => {
     
     const context = useContext(AppContext);
     const {loading, error} = useGetRequest("http://localhost:8080/locations/all");    
-    const  {data} = context;
+    const  {data, draw, setDraw} = context;
 
+    
 
     return (
         <div className="w-screen h-sc flex flex-row justify-evenly align-middle py-6 bg-opacity-20 relative z-0">
@@ -21,10 +23,10 @@ const Home = () => {
                 attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
                 />
 
-                {data.map(geom => (
-                    <Marker  key={geom.id} position={geom.geometry.coordinates}><Tooltip>{geom.name}</Tooltip></Marker>
-                    
-                ))}    
+                    {data.map(geom => (
+                        <Marker  key={geom.id} position={geom.geometry.coordinates}><Tooltip>{geom.name+" "+geom.geometry.coordinates}</Tooltip></Marker>
+                    ))}     
+                      
 
             </MapContainer>
             }

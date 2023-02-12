@@ -9,8 +9,8 @@ module.exports = {
       },
       height:{
         'good':'78rem',
-        'card':'60rem',
-        'sc':'94vh'
+        'card':'25rem',
+        'sc':'88vh'
       }
     },
   },
