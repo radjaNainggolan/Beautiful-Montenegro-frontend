@@ -3,6 +3,7 @@ import Home from './pages/Home';
 import Header from './components/Header';
 import AppProvider from './context/AppContext';
 import Register from './pages/Register';
+import LogIn from './pages/LogIn';
 
 
 function App() {
@@ -14,6 +15,7 @@ function App() {
           <Routes>
             <Route exact path='/' element={<Home/>}></Route>
             <Route exact path='/register' element={<Register/>}></Route>
+            <Route exact path='/login' element={<LogIn/>}></Route>
           </Routes>
         </div>
       </AppProvider>
