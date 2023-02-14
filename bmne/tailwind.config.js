@@ -8,9 +8,10 @@ module.exports = {
         montserrat:['Montserrat'],
       },
       height:{
-        'good':'78rem',
+        'good':'70rem',
         'card':'25rem',
-        'sc':'88vh'
+        'sc':'92vh',
+        'form':'40rem'
       }
     },
   },

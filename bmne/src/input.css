@@ -4,3 +4,20 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+.formdiv{
+    @apply flex flex-col align-middle items-start justify-between h-14 w-full
+}
+
+.input{
+    @apply outline-none border-b-2 w-10/12 border-b-gray-500 text-lg font-medium
+}
+
+.label{
+    @apply text-gray-500
+}
+
+.button{
+    @apply text-xl border-2 border-black rounded-2xl px-4 hover:bg-black hover:text-white transition-colors duration-150 active:scale-95
+}
