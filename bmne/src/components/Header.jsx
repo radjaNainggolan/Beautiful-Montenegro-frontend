@@ -4,7 +4,7 @@ import { useContext } from "react";
 const Header = () => {
 
     const context = useContext(AppContext);
-    const {logedIn, setLogedIn} = context;
+    const {logedIn} = context;
 
     return (
         <nav className="flex flex-row align-middle items-center justify-between bg-white py-4 border-b-4 border-black sticky top-0 relative z-10">

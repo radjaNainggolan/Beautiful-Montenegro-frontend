@@ -1,19 +1,13 @@
-import {MapContainer, TileLayer, useMap, Marker, Popup, Tooltip} from 'react-leaflet';
+import {MapContainer, TileLayer, Marker, Tooltip} from 'react-leaflet';
 import useGetRequest from '../customHooks/useGetRequest';
 import CardList from '../components/CardList';
-import { AppContext } from '../context/AppContext';
-import { useContext, useEffect} from 'react';
-import DynamicMarker from '../components/DynamicMarker';
+
 
 //42.7044223 19.3957785
 const Home = () => {
     
-    const context = useContext(AppContext);
-    const {loading, error} = useGetRequest("http://localhost:8080/locations/all");    
-    const  {data, draw, setDraw} = context;
-
+    const {data, loading, error} = useGetRequest("http://localhost:8080/locations/all");    
     
-
     return (
         <div className="w-screen h-sc flex flex-row justify-evenly align-middle py-6 bg-opacity-20 relative z-0">
            {data && 

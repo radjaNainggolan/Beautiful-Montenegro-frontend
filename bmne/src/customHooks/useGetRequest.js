@@ -1,10 +1,9 @@
 import axios from "axios";
-import { useState, useEffect, useContext } from "react";
-import { AppContext } from "../context/AppContext";
+import { useState, useEffect} from "react";
+
 const useGetRequest = (url) => {
    
-    const context = useContext(AppContext);
-    const {data, setData} = context;
+    const [data, setData] = useState(null);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
     
@@ -37,7 +36,7 @@ const useGetRequest = (url) => {
     },[url]);
 
     
-    return {loading, error}
+    return {data, loading, error}
 }
  
 export default useGetRequest;
