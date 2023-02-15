@@ -29,7 +29,7 @@ const CardList = ({data, draw, setDraw}) => {
     return (
         <div className="font-montserrat text-lg font-normal grid grid-cols-1 gap-y-10 py-6 justify-between align-middle items-center w-1/4 h-full overflow-scroll scrollbar scrollbar-thumb-slate-700 scrollbar-thin ">
             {data.map( (geom) => (
-                <div key={geom.id}  
+                <div id={geom.id} key={geom.id}  
                 className="flex flex-col p-3 items-center justify-between w-96 h-card content-center text-center cursor-pointer mx-auto"
                 >
                     {/* <img 
@@ -38,7 +38,7 @@ const CardList = ({data, draw, setDraw}) => {
                     className="w-3/4 h-3/4 rounded-md" 
                     /> */}
                     
-                    <SimpleImageSlider  width={320} style={{position:"relative", width:"20rem", height:"20rem", borderRadius:"4px"}} height={310} showBullets={false} showNavs={true} images={geom.images}/>
+                    <SimpleImageSlider  width={470} style={{position:"relative", borderRadius:"4px"}} height={310} showBullets={false} showNavs={true} images={geom.images}/>
                     
                     <div className="flex flex-col justify-evenly h-1/6">
                         <h3>{geom.name}</h3>
