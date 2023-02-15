@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import SimpleImageSlider from "react-simple-image-slider";
 const CardList = ({data, draw, setDraw}) => {
     
@@ -26,7 +27,7 @@ const CardList = ({data, draw, setDraw}) => {
 
 
     return (
-        <div className="font-montserrat text-lg font-normal grid grid-cols-1 gap-y-10 py-6 justify-between align-middle items-center w-1/4 h-full overflow-scroll scrollbar scrollbar-thumb-slate-700 scrollbar-thin">
+        <div className="font-montserrat text-lg font-normal grid grid-cols-1 gap-y-10 py-6 justify-between align-middle items-center w-1/4 h-full overflow-scroll scrollbar scrollbar-thumb-slate-700 scrollbar-thin ">
             {data.map( (geom) => (
                 <div key={geom.id}  
                 className="flex flex-col p-3 items-center justify-between w-96 h-card content-center text-center cursor-pointer mx-auto"
@@ -37,13 +38,13 @@ const CardList = ({data, draw, setDraw}) => {
                     className="w-3/4 h-3/4 rounded-md" 
                     /> */}
                     
-                    <SimpleImageSlider  width={320} style={{position:"relative", width:"20rem", height:"20rem", borderRadius:"4px"}} height={270} showBullets={false} showNavs={true} images={geom.images}/>
+                    <SimpleImageSlider  width={320} style={{position:"relative", width:"20rem", height:"20rem", borderRadius:"4px"}} height={310} showBullets={false} showNavs={true} images={geom.images}/>
                     
-                    <div className="flex flex-col justify-evenly h-1/3">
+                    <div className="flex flex-col justify-evenly h-1/6">
                         <h3>{geom.name}</h3>
-                        <p>{geom.description}</p>
-                        
+                        {/* <p>{geom.city}</p> */}
                     </div>
+                    <Link to={`/location/${geom.id}`} className=" border-2 px-3 rounded-xl border-gray-500 hover:text-white hover:bg-black transition-colors duration-150 ">See more</Link>
                 </div>
             ) )}
         

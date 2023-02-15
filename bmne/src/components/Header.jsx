@@ -27,7 +27,7 @@ const Header = () => {
 
     return (
         <nav className="flex flex-row align-middle items-center justify-between bg-white py-4 border-b-4 border-black sticky top-0 relative z-10">
-            <h1 className="font-graduate text-center text-4xl text-black mx-10">Beautiful Montenegro</h1>
+            <Link to="/" className="font-graduate text-center text-4xl text-black mx-10">Beautiful Montenegro</Link>
             <div className= "w-3/12 font-montserrat font-medium mr-24">
                 {logedIn ? 
                     (   

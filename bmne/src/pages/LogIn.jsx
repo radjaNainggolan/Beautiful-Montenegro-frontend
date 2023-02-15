@@ -48,7 +48,7 @@ const LogIn = () => {
 
 
     return (
-        <div className="flex flex-row w-6/12 mt-5 align-middle h-sc justify-between items-center mx-auto my-auto rounded-lg border-4 border-gray-500">
+        <div className="flex flex-row w-6/12 mt-5 align-middle h-sc justify-between items-center mx-auto my-auto rounded-lg border-2 border-gray-500">
             <div className="w-3/5 h-full">
                 <img className="h-full rounded-l-sm w-max object-cover" src="https://img.itinari.com/page/content/original/90d61de3-0389-47e9-9f60-1fde951f0589-istock-512815952.jpg?ch=DPR&dpr=2.625&w=994&s=20219fef65d0e22ab8f7bd87e14a108d" alt="" />
             </div>    

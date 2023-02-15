@@ -55,7 +55,7 @@ const Register = () => {
 
 
     return (
-        <div className="flex flex-row w-6/12 mt-5 align-middle h-sc justify-between items-center mx-auto my-auto rounded-lg border-4 border-gray-500">
+        <div className="flex flex-row w-6/12 mt-3 align-middle h-sc justify-between items-center mx-auto my-auto rounded-lg border-2 border-gray-500">
             <div className="w-3/5 h-full">
                 <img className="h-full rounded-l-sm w-max object-cover" src="https://lp-cms-production.imgix.net/2021-06/Montenegro_Perast.jpg" alt="" />
             </div>    
