@@ -10,32 +10,7 @@ const Home = () => {
     
     const {data, loading, error} = useGetRequest("http://localhost:8080/locations/all");    
     
-    const [clicked, setClicked] = useState();
     
-    let d = [];
-
-    // if(data){
-    //     for(let i = data[0].id; i < data.length; i++){
-    //         d[i] = false;
-    //     }
-    // }
-
-
-    useEffect(() => {
-        
-        if(data !== null){
-
-            for(let i = 0; i < data.length; i++){
-                d[i] = {id:data[i].id, focus:false };
-            }
-            
-            setClicked(d);
-        }
-
-        
-
-    },[data]);
-
 
 
 
@@ -44,15 +19,6 @@ const Home = () => {
         const element = document.getElementById(id);
         
         if(element){
-            let d = clicked;
-            for(let i = 0; i < data.length; i++){
-                d[i].focus = false;
-            }
-            
-            let idx = d.findIndex(e => e.id = id);
-            d[idx].focus = true;
-            setClicked(d);
-            console.log(clicked);
             element.scrollIntoView({behavior: 'smooth'});
         }
     }
@@ -73,7 +39,7 @@ const Home = () => {
 
             </MapContainer>
             }
-            {data && <CardList data={data} clicked={clicked} ></CardList>}
+            {data && <CardList data={data}  ></CardList>}
 
         </div>
     );

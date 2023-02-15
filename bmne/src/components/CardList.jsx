@@ -1,8 +1,9 @@
+import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import SimpleImageSlider from "react-simple-image-slider";
-const CardList = ({data, draw, setDraw}) => {
-    
-    // const context = useContext(AppContext);
+const CardList = ({data}) => {
+
+    // // const context = useContext(AppContext);
     // const {draw , setDraw} = context;
     
     // const onClick = (geom) => {
@@ -27,10 +28,10 @@ const CardList = ({data, draw, setDraw}) => {
 
 
     return (
-        <div className="font-montserrat text-lg font-normal grid grid-cols-1 gap-y-10 py-6 justify-between align-middle items-center w-1/4 h-full overflow-scroll scrollbar scrollbar-thumb-slate-700 scrollbar-thin ">
+        <div className="font-montserrat text-lg font-normal grid grid-cols-1 gap-y-10  justify-between align-middle items-center w-1/4 h-full overflow-scroll scrollbar scrollbar-thumb-slate-700 scrollbar-thin scroll-smooth scrollbar-thumb-rounded-2xl scrollbar-h-32">
             {data.map( (geom) => (
                 <div id={geom.id} key={geom.id}  
-                className="flex flex-col p-3 items-center justify-between w-96 h-card content-center text-center cursor-pointer mx-auto"
+                className={`flex flex-col  items-center justify-between w-96 h-card content-center text-center cursor-pointer mx-auto `}
                 >
                     {/* <img 
                     src={geom.images[0].url} 

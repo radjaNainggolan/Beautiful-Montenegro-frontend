@@ -1,8 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate} from "react-router-dom";
 import { AppContext } from "../context/AppContext";
 import { useContext } from "react";
 const Header = () => {
 
+    const navigate = useNavigate();
     const context = useContext(AppContext);
     const {logedIn, setLogedIn} = context;
 
@@ -22,6 +23,8 @@ const Header = () => {
     const logOut = () => {
         setLogedIn(false);
         window.localStorage.setItem('Token','');
+        navigate("/");
+        
     }
 
 
